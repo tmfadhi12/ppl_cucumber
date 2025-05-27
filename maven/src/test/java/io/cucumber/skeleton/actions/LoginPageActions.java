@@ -14,7 +14,7 @@ public class LoginPageActions {
     }
 
     public boolean getPageTitle() {
-        return loginPageLocators.pageTitle.getText().equals("Dasbor - Bendahara");
+        return loginPageLocators.landingPageTitle.getText().equals("Dasbor - Bendahara");
     }
 
 }
