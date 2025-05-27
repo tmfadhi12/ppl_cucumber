@@ -13,6 +13,30 @@ public class LoginPageActions {
         PageFactory.initElements(HelperClass.getDriver(), loginPageLocators);
     }
 
+    public void enterUsername(String username) {
+        loginPageLocators.usernameInput.clear();
+        loginPageLocators.usernameInput.sendKeys(username);
+    }
+
+    public void enterPassword(String password) {
+        loginPageLocators.passwordInput.clear();
+        loginPageLocators.passwordInput.sendKeys(password);
+    }
+
+    public void clickLoginButton() {
+        loginPageLocators.loginButton.click();
+    }
+
+    public void login(String username, String password) {
+        enterUsername(username);
+        enterPassword(password);
+        clickLoginButton();
+    }
+
+    public boolean getErrorMessage() {
+        return loginPageLocators.errorMessage.getText().equals("username atau password salah");
+    }
+
     public boolean getDashboardPageTitle() {
         return loginPageLocators.landingPageTitle.getText().equals("Dasbor - Bendahara");
     }
