@@ -1,10 +1,9 @@
-# @Functionality
-# Feature: Login to Student Attendance System
+@Functionality
+Feature: Login to Pengelolaan Dana Pendidikan Sekolah Zaidan Educare
 	
-# 	#TC011
-#   Background: 
-#     Given User has navigated to the login page "http://ptbsp.ddns.net:5081/"
-#     Then User should be able to see login page
+  Background: 
+    Given User has navigated to the login page "http://ptbsp.ddns.net:6882/"
+    Then User should be able to see login page
 
 #   @ValidCredentials  @TC012
 #   Scenario: login is successful with valid credentials
