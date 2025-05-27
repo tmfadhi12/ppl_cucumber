@@ -44,4 +44,8 @@ public class LoginPageActions {
     public boolean isProgresTransaksiPenerimaanDanaMenuVisible() {
         return loginPageLocators.progresTransaksiPenerimaanDanaMenu.isDisplayed();
     }
+
+    public boolean isLoginPageTitleVisible() {
+        return loginPageLocators.pageTitle.isDisplayed();
+    }
 }
