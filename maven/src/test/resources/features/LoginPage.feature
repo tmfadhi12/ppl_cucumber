@@ -12,6 +12,14 @@
 #     And User clicks on login button
 #     Then User should be able to see dashboard page
 
+#  @InvalidCredentials @TC016 @TC017
+#   Scenario Outline: login is unsuccessful with invalid credentials
+#     When User enters NIP as "<NIP>" and password as "<password>"
+#     And User clicks on login button 
+#     Then Current screen still on login page 
+#     And System will show error message "<errorMessage>" under the both field
+
+
 # Examples: 
 #       | NIP				| password	| errorMessage        													| test case										|
 #       | 12345678	| admin			| Incorrect NIP or password, please try again!	| wrong password							|

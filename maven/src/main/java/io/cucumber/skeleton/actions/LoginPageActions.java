@@ -1,9 +1,5 @@
 package io.cucumber.skeleton.actions;
 
-import org.openqa.selenium.support.PageFactory;
-
-import io.cucumber.skeleton.locators.LoginPageLocators;
-
 public class LoginPageActions {
     // example
 
