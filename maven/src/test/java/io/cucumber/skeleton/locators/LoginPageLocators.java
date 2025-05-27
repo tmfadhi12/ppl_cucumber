@@ -37,7 +37,7 @@ public class LoginPageLocators {
     @FindBy(name = "password")
     public WebElement passwordInput;
 
-    @FindBy(xpath = "/html/body/div[4]/div/div[2]/div/div/form/button")
+    @FindBy(xpath = "/html/body/div[2]/div/div[2]/div/div/form/button")
     public WebElement loginButton;
 
     @FindBy(xpath = "/html/body/div[2]/div/div[2]/div/div/div[2]/div/p")

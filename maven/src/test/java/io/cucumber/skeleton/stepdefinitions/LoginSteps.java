@@ -7,6 +7,9 @@ import io.cucumber.java.en.When;
 import io.cucumber.skeleton.actions.LoginPageActions;
 import io.cucumber.skeleton.actions.LogoutPageActions;
 import io.cucumber.skeleton.utils.HelperClass;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginSteps {
     // example
@@ -19,7 +22,7 @@ public class LoginSteps {
     @Given("User has navigated to the login page {string}")
     public void navigateToWebApp(String url) throws InterruptedException {
         HelperClass.openPage(url);
-        Thread.sleep(2000);
+        Thread.sleep(1000);
     }
 
     @Then("User should be able to see login page")
@@ -27,17 +30,26 @@ public class LoginSteps {
         objLogin.isLoginPageTitleVisible();
     }
 
-    @When("User enters NIP as {string} and password as {string}")
-    public void userEntersNIPAsAndPasswordAs(String arg0, String arg1) {
-        
+    @When("User enters username as {string} and password as {string}")
+    public void userEntersUsernameAsAndPasswordAs(String username, String password) {
+        objLogin.enterUsername(username);
+        objLogin.enterPassword(password);
     }
 
     @And("User clicks on login button")
     public void userClicksOnLoginButton() {
-        
+        objLogin.clickLoginButton();
     }
 
     @Then("User should be able to see dashboard page")
-    public void userShouldBeAbleToSeeDashboardPage() {
+    public void userShouldBeAbleToSeeDashboardPage() throws InterruptedException {
+        objLogin.getDashboardPageTitle();
+        objLogin.isDasborMenuVisible();
+        objLogin.isPengaturanNotifikasiMenuVisible();
+        objLogin.isRekapitulasiMenuVisible();
+        objLogin.isStatusPemabayaranMenuVisible();
+        objLogin.isTagihanSiswaMenuVisible();
+        objLogin.isProgresTransaksiPenerimaanDanaMenuVisible();
+        objLogin.isTransaksiPenerimaanDanaMenuVisible();
     }
 }

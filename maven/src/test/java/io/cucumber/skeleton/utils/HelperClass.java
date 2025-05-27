@@ -1,6 +1,8 @@
 package io.cucumber.skeleton.utils;
 
 import java.time.Duration;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -9,6 +11,7 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class HelperClass {
     private static HelperClass helperClass;
@@ -25,15 +28,27 @@ public class HelperClass {
             driver = new EdgeDriver(options);
         } else {
             WebDriverManager.chromedriver().setup();
-            ChromeOptions options = new ChromeOptions();
-            options.addArguments("--start-maximized");
-            options.addArguments("--remote-allow-origins=*");
+
+            ChromeOptions options = getChromeOptions();
             driver = new ChromeDriver(options);
         }
 
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TIMEOUT));
+    }
+
+    private static ChromeOptions getChromeOptions() {
+        Map<String, Object> chromePrefs = new HashMap<>();
+        chromePrefs.put("profile.password_manager_leak_detection", false);
+        chromePrefs.put("credentials_enable_service", false);
+        chromePrefs.put("profile.password_manager_enabled", false);
+
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("prefs", chromePrefs);
+        options.addArguments("--start-maximized");
+        options.addArguments("--remote-allow-origins=*");
+        return options;
     }
 
     public static void openPage(String url) {
@@ -56,5 +71,9 @@ public class HelperClass {
             driver.quit();
         }
         helperClass = null;
+    }
+
+    public static WebDriverWait webDriverWaiting() {
+        return new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 }
