@@ -37,8 +37,8 @@ public class LoginPageActions {
         return loginPageLocators.errorMessage.getText().equals("username atau password salah");
     }
 
-    public boolean getDashboardPageTitle() {
-        return loginPageLocators.landingPageTitle.getText().equals("Dasbor - Bendahara");
+    public String getDashboardTitle() {
+        return loginPageLocators.landingPageTitle.getText();
     }
 
     public boolean isDasborMenuVisible() {

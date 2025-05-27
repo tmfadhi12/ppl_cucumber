@@ -10,6 +10,7 @@ import io.cucumber.skeleton.utils.HelperClass;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.Assert;
 
 public class LoginSteps {
     // example
@@ -43,7 +44,7 @@ public class LoginSteps {
 
     @Then("User should be able to see dashboard page")
     public void userShouldBeAbleToSeeDashboardPage() throws InterruptedException {
-        objLogin.getDashboardPageTitle();
+        Assert.assertEquals(objLogin.getDashboardTitle(), "Dasbor - Bendahara");
         objLogin.isDasborMenuVisible();
         objLogin.isPengaturanNotifikasiMenuVisible();
         objLogin.isRekapitulasiMenuVisible();
