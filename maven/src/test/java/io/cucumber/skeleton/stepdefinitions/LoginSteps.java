@@ -45,13 +45,13 @@ public class LoginSteps {
     @Then("User should be able to see dashboard page")
     public void userShouldBeAbleToSeeDashboardPage() throws InterruptedException {
         Assert.assertEquals(objLogin.getDashboardTitle(), "Dasbor - Bendahara");
-        objLogin.isDasborMenuVisible();
-        objLogin.isPengaturanNotifikasiMenuVisible();
-        objLogin.isRekapitulasiMenuVisible();
-        objLogin.isStatusPemabayaranMenuVisible();
-        objLogin.isTagihanSiswaMenuVisible();
-        objLogin.isProgresTransaksiPenerimaanDanaMenuVisible();
-        objLogin.isTransaksiPenerimaanDanaMenuVisible();
+        Assert.assertEquals(objLogin.getDasborMenuText(), "Dasbor");
+        Assert.assertEquals(objLogin.getPengaturanNotifikasiText(), "Pengaturan Notifikasi");
+        Assert.assertEquals(objLogin.getRekapitulasiMenuText(), "Rekapitulasi");
+        Assert.assertEquals(objLogin.getStatusPemabayaranMenuText(), "Status Pembayaran");
+        Assert.assertEquals(objLogin.getTagihanMenuText(), "Tagihan Siswa");
+        Assert.assertEquals(objLogin.getProgresTransaksiPenerimaanDanaText(), "Progres Transaksi Penerimaan Dana");
+        Assert.assertEquals(objLogin.getTransaksiPenerimaanDanaText(), "Transaksi Penerimaan Dana");
     }
 
     @Then("User should be able to see error message {string}")
