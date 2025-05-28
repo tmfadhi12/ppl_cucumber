@@ -53,4 +53,9 @@ public class LoginSteps {
         objLogin.isProgresTransaksiPenerimaanDanaMenuVisible();
         objLogin.isTransaksiPenerimaanDanaMenuVisible();
     }
+
+    @Then("User should be able to see error message {string}")
+    public void userShouldBeAbleToSeeErrorMessage(String errorMessage) {
+        Assert.assertEquals(objLogin.getErrorMessage(), errorMessage);
+    }
 }

@@ -33,8 +33,8 @@ public class LoginPageActions {
         clickLoginButton();
     }
 
-    public boolean getErrorMessage() {
-        return loginPageLocators.errorMessage.getText().equals("username atau password salah");
+    public String getErrorMessage() {
+        return loginPageLocators.errorMessage.getText();
     }
 
     public String getDashboardTitle() {
