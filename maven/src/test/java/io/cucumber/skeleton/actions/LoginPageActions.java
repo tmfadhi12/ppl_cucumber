@@ -41,32 +41,32 @@ public class LoginPageActions {
         return loginPageLocators.landingPageTitle.getText();
     }
 
-    public boolean isDasborMenuVisible() {
-        return loginPageLocators.dasborMenu.isDisplayed();
+    public String getDasborMenuText() {
+        return loginPageLocators.dasborMenu.getText();
     }
 
-    public boolean isTagihanSiswaMenuVisible() {
-        return loginPageLocators.tagihanSiswaMenu.isDisplayed();
+    public String getTagihanMenuText() {
+        return loginPageLocators.tagihanSiswaMenu.getText();
     }
 
-    public boolean isTransaksiPenerimaanDanaMenuVisible() {
-        return loginPageLocators.transaksiPenerimaanDanaMenu.isDisplayed();
+    public String getTransaksiPenerimaanDanaText() {
+        return loginPageLocators.transaksiPenerimaanDanaMenu.getText();
     }
 
-    public boolean isPengaturanNotifikasiMenuVisible() {
-        return loginPageLocators.pengaturanNotifikasiMenu.isDisplayed();
+    public String getPengaturanNotifikasiText() {
+        return loginPageLocators.pengaturanNotifikasiMenu.getText();
     }
 
-    public boolean isStatusPemabayaranMenuVisible() {
-        return loginPageLocators.statusPemabayaranMenu.isDisplayed();
+    public String getStatusPemabayaranMenuText() {
+        return loginPageLocators.statusPemabayaranMenu.getText();
     }
 
-    public boolean isRekapitulasiMenuVisible() {
-        return loginPageLocators.rekapitulasiMenu.isDisplayed();
+    public String getRekapitulasiMenuText() {
+        return loginPageLocators.rekapitulasiMenu.getText();
     }
 
-    public boolean isProgresTransaksiPenerimaanDanaMenuVisible() {
-        return loginPageLocators.progresTransaksiPenerimaanDanaMenu.isDisplayed();
+    public String getProgresTransaksiPenerimaanDanaText() {
+        return loginPageLocators.progresTransaksiPenerimaanDanaMenu.getText();
     }
 
     public boolean isLoginPageTitleVisible() {
