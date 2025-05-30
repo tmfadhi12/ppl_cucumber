@@ -1,5 +1,12 @@
 .idea
 *.iml
 
-target/
+# Ignore specific folders in target/
+target/test-classes/
+target/maven-status/
+target/generated-test-sources/
+target/surefire-reports/
+
+# Keep target/report/ (tidak perlu ditulis karena tidak di-ignore)
+
 *.versionsBackup
