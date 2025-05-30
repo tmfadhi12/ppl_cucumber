@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -75,5 +76,13 @@ public class HelperClass {
 
     public static WebDriverWait webDriverWaiting() {
         return new WebDriverWait(driver, Duration.ofSeconds(5));
+    }
+
+    public static boolean isElementVisible(WebElement element) {
+        try {
+            return element.isDisplayed();
+        } catch (Exception e) {
+            return false;
+        }
     }
 }

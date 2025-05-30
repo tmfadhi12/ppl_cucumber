@@ -5,17 +5,12 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import io.cucumber.skeleton.actions.LoginPageActions;
-import io.cucumber.skeleton.actions.LogoutPageActions;
 import io.cucumber.skeleton.utils.HelperClass;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.TimeoutException;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 
 public class LoginSteps {
     // example
     LoginPageActions objLogin = new LoginPageActions();
-	LogoutPageActions objHomePage = new LogoutPageActions();
 	// String NIP = "12345678";
 	// String password = "admin123";
 	// String url = "http://ptbsp.ddns.net:6882/";
